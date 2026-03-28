@@ -86,14 +86,14 @@ export default function Contact() {
     {
       icon: '💼',
       label: 'LinkedIn',
-      value: 'linkedin.com/in/arshad-husain',
-      href: 'https://linkedin.com/in/arshad-husain',
+      value: 'linkedin.com/in/arshad-husain-1a1860267',
+      href: 'https://www.linkedin.com/in/arshad-husain-1a1860267/',
     },
     {
       icon: '🐙',
       label: 'GitHub',
-      value: 'github.com/arshad4self',
-      href: 'https://github.com/arshad4self',
+      value: 'github.com/Arshadhusain786',
+      href: 'https://github.com/Arshadhusain786',
     },
     {
       icon: '📱',
@@ -156,8 +156,8 @@ export default function Contact() {
               <h4 className="font-semibold mb-6">Follow My Work</h4>
               <div className="flex gap-4">
                 {[
-                  { label: 'GitHub', icon: '🐙', href: 'https://github.com/arshad4self' },
-                  { label: 'LinkedIn', icon: '💼', href: 'https://linkedin.com/in/arshad-husain' },
+                  { label: 'GitHub', icon: '🐙', href: 'https://github.com/Arshadhusain786' },
+                  { label: 'LinkedIn', icon: '💼', href: 'https://www.linkedin.com/in/arshad-husain-1a1860267/' },
                   { label: 'Email', icon: '📧', href: 'mailto:arshad4self@gmail.com' },
                 ].map((social) => (
                   <a

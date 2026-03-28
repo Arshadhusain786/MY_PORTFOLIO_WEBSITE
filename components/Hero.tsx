@@ -75,7 +75,7 @@ export default function Hero() {
             href="#projects"
             className="group relative px-8 py-3 rounded-lg bg-gradient-to-r from-cyan-400 to-blue-500 text-background font-semibold overflow-hidden transition-all hover:shadow-lg hover:shadow-cyan-400/40 hover:scale-105 active:scale-95 cursor-pointer"
           >
-            <span className="relative z-10">View Projects</span>
+            <span className="relative z-10">Explore My Work</span>
             <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity" />
           </a>
 
@@ -83,11 +83,11 @@ export default function Hero() {
             href="#contact"
             className="px-8 py-3 rounded-lg glass font-semibold text-foreground transition-all hover:bg-white/10 hover:scale-105 active:scale-95 cursor-pointer"
           >
-            Contact Me
+            Let's Build Together
           </a>
 
           <a
-            href="mailto:arshad4self@gmail.com?subject=Let%27s%20Connect"
+            href="mailto:arshad4self@gmail.com?subject=Let%27s%20Collaborate"
             className="px-8 py-3 rounded-lg border border-cyan-400/40 text-cyan-400 font-semibold transition-all hover:bg-cyan-400/10 hover:scale-105 active:scale-95 cursor-pointer"
           >
             Start Conversation

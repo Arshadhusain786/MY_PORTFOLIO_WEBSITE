@@ -14,8 +14,8 @@ export default function Footer() {
   ];
 
   const socialLinks = [
-    { label: 'GitHub', icon: '🐙', href: 'https://github.com/arshad4self' },
-    { label: 'LinkedIn', icon: '💼', href: 'https://linkedin.com/in/arshad-husain' },
+    { label: 'GitHub', icon: '🐙', href: 'https://github.com/Arshadhusain786' },
+    { label: 'LinkedIn', icon: '💼', href: 'https://www.linkedin.com/in/arshad-husain-1a1860267/' },
     { label: 'Email', icon: '📧', href: 'mailto:arshad4self@gmail.com' },
   ];
 

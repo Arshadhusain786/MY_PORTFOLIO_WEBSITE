@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { useInView } from '@/hooks/useInView';
 
-const GITHUB_USERNAME = 'arshad4self';
+const GITHUB_USERNAME = 'Arshadhusain786';
 
 interface Project {
   id: string;
@@ -12,50 +12,68 @@ interface Project {
   tags: string[];
   category: string;
   featured: boolean;
-  repo?: string;
+  repo: string;
 }
 
 export default function Projects() {
   const [activeCategory, setActiveCategory] = useState('all');
-  const [expandedProject, setExpandedProject] = useState<string | null>(null);
   const { ref: headerRef, isInView: headerInView } = useInView();
   const { ref: featuredRef, isInView: featuredInView } = useInView({ threshold: 0.2 });
 
   const projects: Project[] = [
-    // Full Stack Projects
+    // Featured Full Stack Projects
     {
       id: 'career-galaxy',
       title: 'Career Galaxy',
-      description: 'A full-stack platform connecting students with professionals for referrals and career guidance. Real-world problem solving with scalable backend architecture and payment integration (Razorpay).',
-      tags: ['Spring Boot', 'React', 'PostgreSQL', 'Razorpay'],
+      description: 'A production-grade full-stack platform for career guidance and referral workflows. Scalable backend using Spring Boot, REST APIs, and PostgreSQL with responsive React frontend and Razorpay payment integration.',
+      tags: ['Spring Boot', 'React', 'PostgreSQL', 'Razorpay', 'REST APIs'],
       category: 'fullstack',
       featured: true,
       repo: 'Career-Galaxy-Full-Stack',
     },
     {
-      id: 'student-management',
-      title: 'Student Management System',
-      description: 'Full-stack system for managing students, courses, and records with Spring Boot backend and Thymeleaf templating.',
-      tags: ['Spring Boot', 'Thymeleaf', 'MySQL', 'JPA'],
+      id: 'ecommerce-backend',
+      title: 'E-Commerce Microservices Backend',
+      description: 'Microservices-based backend system with user, product, and payment services. Built 15+ REST APIs with JWT authentication, Eureka service discovery, and API Gateway. Performance optimized with 20-30% improvement.',
+      tags: ['Spring Boot', 'Microservices', 'Eureka', 'JWT', 'REST APIs'],
       category: 'fullstack',
       featured: true,
+      repo: 'E-COMMERCE-APP',
+    },
+    // Additional Full Stack
+    {
+      id: 'student-management',
+      title: 'Student Management System',
+      description: 'Full-stack system for managing students, courses, and records. Built with Spring Boot backend and Thymeleaf templating for dynamic server-side rendering.',
+      tags: ['Spring Boot', 'Thymeleaf', 'MySQL', 'JPA'],
+      category: 'fullstack',
+      featured: false,
       repo: 'Student-Management-System-Full-Stack',
     },
-    // Backend Projects
+    // Backend & ML Projects
     {
       id: 'spam-detection',
       title: 'Spam Mail Detection System',
-      description: 'Hybrid ML model for spam classification with dataset training using Python, ML, and NLP techniques.',
-      tags: ['Python', 'Machine Learning', 'NLP', 'Classification'],
+      description: 'Hybrid machine learning model for email spam classification. Uses Python, ML algorithms, and NLP techniques to classify emails with high accuracy.',
+      tags: ['Python', 'Machine Learning', 'NLP', 'Scikit-learn'],
       category: 'backend',
       featured: false,
       repo: 'spam-mail-detection-system-hybrid-model',
+    },
+    {
+      id: 'library-management',
+      title: 'Library Management System',
+      description: 'Backend system for managing books, issue/return tracking, and user records. Demonstrates database design and transactional operations.',
+      tags: ['Java', 'Spring Boot', 'MySQL', 'JPA'],
+      category: 'backend',
+      featured: false,
+      repo: 'Library-Management-System',
     },
     // Core Learning Projects
     {
       id: 'book-my-show',
       title: 'Book-My-Show Application',
-      description: 'Core application project demonstrating booking system architecture and user management.',
+      description: 'Core application project demonstrating booking system architecture and user management. Covers database design and business logic implementation.',
       tags: ['Java', 'Spring Boot', 'Database Design'],
       category: 'core',
       featured: false,
@@ -64,8 +82,8 @@ export default function Projects() {
     {
       id: 'multithreading',
       title: 'MultiThreading',
-      description: 'Core Java learning project demonstrating concurrent programming concepts and thread management.',
-      tags: ['Java', 'Threading', 'Concurrency'],
+      description: 'Core Java learning project demonstrating concurrent programming concepts, thread management, and synchronization patterns.',
+      tags: ['Java', 'Threading', 'Concurrency', 'Synchronization'],
       category: 'core',
       featured: false,
       repo: 'MultiThreading',
@@ -73,7 +91,7 @@ export default function Projects() {
     {
       id: 'jpa-basics',
       title: 'Basics of JPA',
-      description: 'Fundamentals of Java Persistence API with ORM mapping and database operations.',
+      description: 'Fundamentals of Java Persistence API with Hibernate ORM mapping, database operations, and entity relationships.',
       tags: ['Java', 'JPA', 'Hibernate', 'ORM'],
       category: 'core',
       featured: false,
@@ -82,15 +100,15 @@ export default function Projects() {
     {
       id: 'spring-security',
       title: 'Spring Security',
-      description: 'Core security learning project demonstrating authentication, authorization, and secured endpoints.',
-      tags: ['Spring Security', 'Authentication', 'Authorization'],
+      description: 'Core security learning project demonstrating authentication, authorization, and securing REST API endpoints with Spring Security.',
+      tags: ['Spring Security', 'Authentication', 'Authorization', 'JWT'],
       category: 'core',
       featured: false,
       repo: 'Spring-security',
     },
   ];
 
-  const categories = ['all', 'fullstack', 'backend', 'core', 'ml'];
+  const categories = ['all', 'fullstack', 'backend', 'core'];
 
   const filteredProjects =
     activeCategory === 'all'
@@ -99,8 +117,7 @@ export default function Projects() {
 
   const featuredProjects = projects.filter((p) => p.featured);
 
-  const getGitHubUrl = (repo?: string) => {
-    if (!repo) return `https://github.com/${GITHUB_USERNAME}`;
+  const getGitHubUrl = (repo: string) => {
     return `https://github.com/${GITHUB_USERNAME}/${repo}`;
   };
 
