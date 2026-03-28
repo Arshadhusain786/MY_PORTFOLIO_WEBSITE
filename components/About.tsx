@@ -34,29 +34,29 @@ export default function About() {
           {/* Text content */}
           <div className="space-y-6">
             <p className="text-lg text-foreground/80 leading-relaxed">
-              I&apos;m a backend-focused Full Stack Developer specializing in building scalable applications using Java, Spring Boot, and modern web technologies. My passion lies in engineering robust systems that solve real-world problems efficiently and at scale.
+              I&apos;m a full-stack developer passionate about building scalable applications with Java, Spring Boot, and modern web technologies. I specialize in backend architecture, REST API development, and solving real-world problems efficiently.
             </p>
 
             <p className="text-lg text-foreground/80 leading-relaxed">
-              Currently interning at Texium Solutions where I&apos;ve developed secure microservices, optimized API performance by 30%, and implemented OAuth2/JWT authentication across 15+ endpoints. I specialize in designing scalable REST APIs, microservices architectures, and implementing advanced caching strategies with Redis.
+              My work spans across full-stack projects like Career Galaxy (a referral platform with payment integration), system design with Spring Boot and microservices architecture, and machine learning applications for spam detection. I&apos;m committed to writing clean, production-grade code.
             </p>
 
             <p className="text-lg text-foreground/80 leading-relaxed">
-              Beyond backend engineering, I&apos;m deeply passionate about Data Structures and Algorithms, having solved 500+ DSA problems and ranked first in competitive blind coding contests. I love mentoring students, contributing to the developer community, and building production-grade systems that make an impact.
+              Beyond development, I&apos;m passionate about Data Structures and Algorithms, contributing to open-source projects, and mentoring students in software development. I believe in continuous learning and building solutions that create real impact.
             </p>
 
             <div className="flex gap-6 pt-4">
               <div>
-                <p className="text-3xl font-bold text-cyan-400">500+</p>
-                <p className="text-foreground/60 text-sm">DSA Problems Solved</p>
+                <p className="text-3xl font-bold text-cyan-400">7</p>
+                <p className="text-foreground/60 text-sm">Projects Completed</p>
               </div>
               <div>
-                <p className="text-3xl font-bold text-cyan-400">30%</p>
-                <p className="text-foreground/60 text-sm">API Performance Gain</p>
+                <p className="text-3xl font-bold text-cyan-400">3</p>
+                <p className="text-foreground/60 text-sm">Full Stack Apps</p>
               </div>
               <div>
-                <p className="text-3xl font-bold text-cyan-400">10+</p>
-                <p className="text-foreground/60 text-sm">Students Mentored</p>
+                <p className="text-3xl font-bold text-cyan-400">100%</p>
+                <p className="text-foreground/60 text-sm">Authentic Code</p>
               </div>
             </div>
           </div>

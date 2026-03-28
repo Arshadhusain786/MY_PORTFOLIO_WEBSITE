@@ -3,17 +3,16 @@
 import React, { useState } from 'react';
 import { useInView } from '@/hooks/useInView';
 
+const GITHUB_USERNAME = 'arshad4self';
+
 interface Project {
   id: string;
   title: string;
   description: string;
-  fullDescription: string;
   tags: string[];
   category: string;
   featured: boolean;
-  github?: string;
-  live?: string;
-  image?: string;
+  repo?: string;
 }
 
 export default function Projects() {
@@ -23,70 +22,75 @@ export default function Projects() {
   const { ref: featuredRef, isInView: featuredInView } = useInView({ threshold: 0.2 });
 
   const projects: Project[] = [
+    // Full Stack Projects
     {
       id: 'career-galaxy',
       title: 'Career Galaxy',
-      description: 'Production-grade full-stack platform for career guidance and professional referrals',
-      fullDescription: 'Architected and deployed a scalable full-stack platform on AWS with Spring Boot backend and React frontend. Implemented secure authentication, Razorpay payment integration, and role-based access control. Features include a referral system, dashboard for opportunity tracking, and comprehensive user management. Deployed on custom domain with production-ready infrastructure.',
-      tags: ['Spring Boot', 'React', 'PostgreSQL', 'Razorpay', 'AWS'],
+      description: 'A full-stack platform connecting students with professionals for referrals and career guidance. Real-world problem solving with scalable backend architecture and payment integration (Razorpay).',
+      tags: ['Spring Boot', 'React', 'PostgreSQL', 'Razorpay'],
       category: 'fullstack',
       featured: true,
-      github: 'https://github.com/arshad4self',
-      live: 'https://careergalaxy.com',
+      repo: 'Career-Galaxy-Full-Stack',
     },
     {
-      id: 'ecommerce-backend',
-      title: 'E-Commerce Microservices Backend',
-      description: 'Scalable microservices architecture with 15+ REST APIs and integrated payment workflows',
-      fullDescription: 'Built a Spring Boot-based microservices backend (User, Product, Payment services) with Eureka service discovery and API Gateway. Developed 15+ REST APIs using layered architecture with JWT-based authentication and role-based access control. Implemented dynamic product filtering with JPA queries, reducing response times by 20-30%. Integrated external payment APIs with centralized exception handling for secure end-to-end operations.',
-      tags: ['Spring Boot', 'Microservices', 'Eureka', 'JWT', 'REST APIs'],
-      category: 'backend',
+      id: 'student-management',
+      title: 'Student Management System',
+      description: 'Full-stack system for managing students, courses, and records with Spring Boot backend and Thymeleaf templating.',
+      tags: ['Spring Boot', 'Thymeleaf', 'MySQL', 'JPA'],
+      category: 'fullstack',
       featured: true,
-      github: 'https://github.com/arshad4self/ecommerce-backend',
+      repo: 'Student-Management-System-Full-Stack',
     },
+    // Backend Projects
     {
-      id: 'performance-tuning',
-      title: 'API Performance Optimization & Caching',
-      description: 'Improved API throughput by 30% through Hibernate query optimization and Redis caching',
-      fullDescription: 'Optimized Spring Boot REST API endpoints through advanced Hibernate/JPA query refinement and Redis caching strategies. Accelerated API throughput by 30%, reduced database load by 25%, and achieved sub-second response times. Applied database indexing, query analysis, and cache invalidation strategies for production-grade performance.',
-      tags: ['Hibernate/JPA', 'Redis', 'Spring Boot', 'PostgreSQL', 'Performance Tuning'],
+      id: 'spam-detection',
+      title: 'Spam Mail Detection System',
+      description: 'Hybrid ML model for spam classification with dataset training using Python, ML, and NLP techniques.',
+      tags: ['Python', 'Machine Learning', 'NLP', 'Classification'],
       category: 'backend',
       featured: false,
-      github: 'https://github.com/arshad4self',
+      repo: 'spam-mail-detection-system-hybrid-model',
+    },
+    // Core Learning Projects
+    {
+      id: 'book-my-show',
+      title: 'Book-My-Show Application',
+      description: 'Core application project demonstrating booking system architecture and user management.',
+      tags: ['Java', 'Spring Boot', 'Database Design'],
+      category: 'core',
+      featured: false,
+      repo: 'Book-My-Show-Application',
     },
     {
-      id: 'auth-security',
-      title: 'OAuth2 & JWT Security Implementation',
-      description: 'Secured 15+ Spring Boot endpoints with OAuth2 and JWT authentication',
-      fullDescription: 'Developed and implemented comprehensive OAuth2 and JWT-based authentication system for multiple REST API endpoints. Designed secure token management, refresh token rotation, and authorization strategies. Eliminated unauthorized access vulnerabilities during API testing and improved security posture with role-based access control (RBAC).',
-      tags: ['OAuth2', 'JWT', 'Spring Security', 'REST APIs', 'RBAC'],
-      category: 'backend',
+      id: 'multithreading',
+      title: 'MultiThreading',
+      description: 'Core Java learning project demonstrating concurrent programming concepts and thread management.',
+      tags: ['Java', 'Threading', 'Concurrency'],
+      category: 'core',
       featured: false,
-      github: 'https://github.com/arshad4self',
+      repo: 'MultiThreading',
     },
     {
-      id: 'dsa-practice',
-      title: 'Data Structures & Algorithms Mastery',
-      description: '500+ LeetCode problems solved demonstrating strong problem-solving skills',
-      fullDescription: 'Solved 500+ coding problems across LeetCode and GeeksforGeeks platforms, maintaining 50-day and 100-day coding streaks. Consistently ranked in top 10% for algorithmic problem-solving. Applied DSA concepts in real-world backend optimization and system design challenges.',
-      tags: ['Data Structures', 'Algorithms', 'LeetCode', 'Problem Solving'],
-      category: 'tools',
+      id: 'jpa-basics',
+      title: 'Basics of JPA',
+      description: 'Fundamentals of Java Persistence API with ORM mapping and database operations.',
+      tags: ['Java', 'JPA', 'Hibernate', 'ORM'],
+      category: 'core',
       featured: false,
-      github: 'https://github.com/arshad4self',
+      repo: 'Basics-of-JPA',
     },
     {
-      id: 'blind-coding-contest',
-      title: 'Blind Coding Contest Winner',
-      description: 'Ranked 1st among 40+ participants in competitive blind coding challenge',
-      fullDescription: 'Won first place in a blind coding competition, demonstrating exceptional problem-solving abilities under pressure. Competed against 40+ participants and achieved the highest score through efficient algorithmic thinking and clean code implementation. This achievement showcases strong competitive programming skills and deep DSA knowledge.',
-      tags: ['Competitive Programming', 'Blind Coding', 'Algorithms'],
-      category: 'tools',
+      id: 'spring-security',
+      title: 'Spring Security',
+      description: 'Core security learning project demonstrating authentication, authorization, and secured endpoints.',
+      tags: ['Spring Security', 'Authentication', 'Authorization'],
+      category: 'core',
       featured: false,
-      github: 'https://github.com/arshad4self',
+      repo: 'Spring-security',
     },
   ];
 
-  const categories = ['all', 'fullstack', 'backend', 'frontend', 'tools'];
+  const categories = ['all', 'fullstack', 'backend', 'core', 'ml'];
 
   const filteredProjects =
     activeCategory === 'all'
@@ -95,8 +99,13 @@ export default function Projects() {
 
   const featuredProjects = projects.filter((p) => p.featured);
 
+  const getGitHubUrl = (repo?: string) => {
+    if (!repo) return `https://github.com/${GITHUB_USERNAME}`;
+    return `https://github.com/${GITHUB_USERNAME}/${repo}`;
+  };
+
   return (
-    <section className="relative py-24 md:py-32 px-4 md:px-8">
+    <section className="relative py-24 md:py-32 px-4 md:px-8" id="projects">
       <div className="max-w-6xl mx-auto">
         {/* Section header */}
         <div
@@ -107,35 +116,40 @@ export default function Projects() {
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-              Featured Projects
+              Projects Portfolio
             </span>
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-cyan-400 to-blue-500" />
         </div>
 
-        {/* Featured project spotlight */}
-        {featuredProjects[0] && (
+        {/* Featured projects spotlight */}
+        {featuredProjects.length > 0 && (
           <div
             ref={featuredRef}
-            className={`mb-16 glass rounded-2xl p-8 md:p-12 overflow-hidden group glow-cyan-lg transition-all duration-700 ${
+            className={`mb-16 space-y-6 transition-all duration-700 ${
               featuredInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
             }`}
           >
-            <div className="grid md:grid-cols-2 gap-8 items-center">
-              <div>
-                <div className="inline-block mb-4">
-                  <span className="px-4 py-2 rounded-full bg-cyan-400/20 border border-cyan-400/40 text-cyan-400 text-xs font-semibold">
-                    Featured Project
-                  </span>
+            {featuredProjects.map((project) => (
+              <div
+                key={project.id}
+                className="glass rounded-2xl p-8 md:p-10 overflow-hidden group glow-cyan-lg hover:bg-white/10 transition-all"
+              >
+                <div className="flex items-start justify-between mb-4">
+                  <div>
+                    <span className="inline-block px-3 py-1 rounded-full bg-cyan-400/20 border border-cyan-400/40 text-cyan-400 text-xs font-semibold mb-4">
+                      Featured
+                    </span>
+                    <h3 className="text-2xl md:text-3xl font-bold mb-3">
+                      {project.title}
+                    </h3>
+                  </div>
                 </div>
-                <h3 className="text-3xl md:text-4xl font-bold mb-4">
-                  {featuredProjects[0].title}
-                </h3>
-                <p className="text-foreground/70 mb-6 leading-relaxed">
-                  {featuredProjects[0].fullDescription}
+                <p className="text-foreground/70 mb-6 leading-relaxed max-w-3xl">
+                  {project.description}
                 </p>
                 <div className="flex flex-wrap gap-2 mb-6">
-                  {featuredProjects[0].tags.map((tag) => (
+                  {project.tags.map((tag) => (
                     <span
                       key={tag}
                       className="px-3 py-1 rounded-full bg-cyan-400/10 border border-cyan-400/30 text-cyan-400 text-xs font-medium"
@@ -144,29 +158,19 @@ export default function Projects() {
                     </span>
                   ))}
                 </div>
-                <div className="flex gap-4">
-                  {featuredProjects[0].github && (
-                    <a
-                      href={featuredProjects[0].github}
-                      className="px-6 py-2 rounded-lg bg-foreground/10 hover:bg-foreground/20 text-foreground font-semibold transition-all hover:scale-105"
-                    >
-                      GitHub
-                    </a>
-                  )}
-                  {featuredProjects[0].live && (
-                    <a
-                      href={featuredProjects[0].live}
-                      className="px-6 py-2 rounded-lg bg-gradient-to-r from-cyan-400 to-blue-500 text-background font-semibold transition-all hover:shadow-lg hover:shadow-cyan-400/30 hover:scale-105"
-                    >
-                      View Live
-                    </a>
-                  )}
-                </div>
+                <a
+                  href={getGitHubUrl(project.repo)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-6 py-2 rounded-lg bg-gradient-to-r from-cyan-400 to-blue-500 text-background font-semibold transition-all hover:shadow-lg hover:shadow-cyan-400/30 hover:scale-105 active:scale-95"
+                >
+                  View on GitHub
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </a>
               </div>
-              <div className="relative h-64 md:h-80 rounded-lg glass overflow-hidden flex items-center justify-center">
-                <div className="text-6xl opacity-20">💼</div>
-              </div>
-            </div>
+            ))}
           </div>
         )}
 
@@ -176,41 +180,35 @@ export default function Projects() {
             <button
               key={category}
               onClick={() => setActiveCategory(category)}
-              className={`px-6 py-2 rounded-full font-semibold transition-all text-sm ${
+              className={`px-6 py-2 rounded-full font-semibold transition-all text-sm cursor-pointer ${
                 activeCategory === category
                   ? 'bg-gradient-to-r from-cyan-400 to-blue-500 text-background'
-                  : 'glass text-foreground/70 hover:text-foreground'
+                  : 'glass text-foreground/70 hover:text-foreground hover:bg-white/10'
               }`}
             >
-              {category.charAt(0).toUpperCase() + category.slice(1)}
+              {category === 'all' ? 'All Projects' : category.charAt(0).toUpperCase() + category.slice(1)}
             </button>
           ))}
         </div>
 
         {/* Projects grid */}
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredProjects.map((project) => (
             <div
               key={project.id}
-              className="group relative glass rounded-xl p-6 hover:bg-white/10 transition-all duration-300 cursor-pointer hover:scale-105 hover:glow-cyan"
-              onClick={() =>
-                setExpandedProject(
-                  expandedProject === project.id ? null : project.id
-                )
-              }
+              className="glass rounded-xl p-6 hover:bg-white/10 transition-all duration-300 hover:scale-105 group cursor-pointer flex flex-col h-full"
             >
-              <div className="space-y-4">
-                <div className="flex items-start justify-between">
-                  <h3 className="text-xl font-bold text-cyan-400">
-                    {project.title}
-                  </h3>
-                  <span className="text-xl">📌</span>
-                </div>
+              <div className="space-y-4 flex-1">
+                <h3 className="text-lg font-bold text-cyan-400 group-hover:text-blue-400 transition-colors">
+                  {project.title}
+                </h3>
 
-                <p className="text-foreground/70">{project.description}</p>
+                <p className="text-foreground/70 text-sm leading-relaxed">
+                  {project.description}
+                </p>
 
                 <div className="flex flex-wrap gap-2">
-                  {project.tags.slice(0, 3).map((tag) => (
+                  {project.tags.map((tag) => (
                     <span
                       key={tag}
                       className="px-2 py-1 rounded text-xs bg-white/5 border border-white/10 text-foreground/60"
@@ -218,44 +216,32 @@ export default function Projects() {
                       {tag}
                     </span>
                   ))}
-                  {project.tags.length > 3 && (
-                    <span className="px-2 py-1 text-xs text-foreground/50">
-                      +{project.tags.length - 3} more
-                    </span>
-                  )}
                 </div>
+              </div>
 
-                {expandedProject === project.id && (
-                  <div className="mt-6 pt-6 border-t border-white/10 space-y-4 animate-fade-in">
-                    <p className="text-foreground/80">
-                      {project.fullDescription}
-                    </p>
-                    <div className="flex gap-3">
-                      {project.github && (
-                        <a
-                          href={project.github}
-                          className="px-4 py-2 rounded text-xs bg-white/5 hover:bg-white/10 text-foreground transition-all"
-                          onClick={(e) => e.stopPropagation()}
-                        >
-                          GitHub
-                        </a>
-                      )}
-                      {project.live && (
-                        <a
-                          href={project.live}
-                          className="px-4 py-2 rounded text-xs bg-cyan-400/20 hover:bg-cyan-400/30 text-cyan-400 transition-all"
-                          onClick={(e) => e.stopPropagation()}
-                        >
-                          Live Demo
-                        </a>
-                      )}
-                    </div>
-                  </div>
-                )}
+              <div className="mt-6 pt-6 border-t border-white/10">
+                <a
+                  href={getGitHubUrl(project.repo)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={(e) => e.stopPropagation()}
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded text-sm bg-white/5 hover:bg-white/10 text-foreground transition-all hover:text-cyan-400"
+                >
+                  GitHub
+                  <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </a>
               </div>
             </div>
           ))}
         </div>
+
+        {filteredProjects.length === 0 && (
+          <div className="text-center py-12">
+            <p className="text-foreground/60">No projects in this category yet.</p>
+          </div>
+        )}
       </div>
     </section>
   );

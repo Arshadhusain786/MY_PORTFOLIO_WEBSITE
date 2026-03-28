@@ -26,17 +26,54 @@ export default function Contact() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Validate form data
+    if (!formData.name.trim() || !formData.email.trim() || !formData.subject.trim() || !formData.message.trim()) {
+      setSubmitMessage('Please fill in all fields');
+      return;
+    }
+
+    // Basic email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      setSubmitMessage('Please enter a valid email address');
+      return;
+    }
+
     setIsSubmitting(true);
 
-    // Simulate form submission
-    setTimeout(() => {
-      setSubmitMessage('Message sent successfully! I&apos;ll get back to you soon.');
-      setFormData({ name: '', email: '', subject: '', message: '' });
-      setIsSubmitting(false);
+    // Try to send via API, fallback to mailto
+    try {
+      // Attempt to send via FormSubmit.co or similar service
+      const formElement = e.currentTarget as HTMLFormElement;
+      const response = await fetch('https://formspree.io/f/xyzqwert', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
 
-      // Clear message after 5 seconds
-      setTimeout(() => setSubmitMessage(''), 5000);
-    }, 1500);
+      if (response.ok) {
+        setSubmitMessage('Message sent successfully! I&apos;ll get back to you soon.');
+        setFormData({ name: '', email: '', subject: '', message: '' });
+      } else {
+        // Fallback to mailto
+        triggerMailto();
+      }
+    } catch {
+      // Fallback to mailto on any error
+      triggerMailto();
+    }
+
+    setIsSubmitting(false);
+
+    // Clear message after 5 seconds
+    setTimeout(() => setSubmitMessage(''), 5000);
+  };
+
+  const triggerMailto = () => {
+    const mailtoLink = `mailto:arshad4self@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`)}`;
+    window.location.href = mailtoLink;
+    setSubmitMessage('Opening email client...');
   };
 
   const contactInfo = [
@@ -67,7 +104,7 @@ export default function Contact() {
   ];
 
   return (
-    <section className="relative py-24 md:py-32 px-4 md:px-8">
+    <section className="relative py-24 md:py-32 px-4 md:px-8" id="contact">
       <div className="max-w-6xl mx-auto">
         {/* Section header */}
         <div
