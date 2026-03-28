@@ -25,7 +25,7 @@ export default function Footer() {
         <div className="grid md:grid-cols-4 gap-8 mb-12">
           {/* Brand */}
           <div>
-            <a href="#" className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+            <a href="#hero" className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent cursor-pointer">
               AH
             </a>
             <p className="text-foreground/60 text-sm mt-3">
@@ -93,17 +93,9 @@ export default function Footer() {
             <p className="text-foreground/50 text-sm">
               &copy; {currentYear} Arshad Husain. All rights reserved.
             </p>
-            <div className="flex gap-6 text-sm text-foreground/50">
-              <a href="#" className="hover:text-cyan-400 transition-colors">
-                Privacy Policy
-              </a>
-              <a href="#" className="hover:text-cyan-400 transition-colors">
-                Terms of Service
-              </a>
-              <a href="#" className="hover:text-cyan-400 transition-colors">
-                Sitemap
-              </a>
-            </div>
+            <p className="text-foreground/50 text-sm">
+              Crafted with passion and code
+            </p>
           </div>
         </div>
 

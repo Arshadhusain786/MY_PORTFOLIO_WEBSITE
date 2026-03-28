@@ -24,12 +24,13 @@ export default function Contact() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
     // Validate form data
     if (!formData.name.trim() || !formData.email.trim() || !formData.subject.trim() || !formData.message.trim()) {
       setSubmitMessage('Please fill in all fields');
+      setTimeout(() => setSubmitMessage(''), 4000);
       return;
     }
 
@@ -37,43 +38,26 @@ export default function Contact() {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(formData.email)) {
       setSubmitMessage('Please enter a valid email address');
+      setTimeout(() => setSubmitMessage(''), 4000);
       return;
     }
 
-    setIsSubmitting(true);
-
-    // Try to send via API, fallback to mailto
-    try {
-      // Attempt to send via FormSubmit.co or similar service
-      const formElement = e.currentTarget as HTMLFormElement;
-      const response = await fetch('https://formspree.io/f/xyzqwert', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
-      });
-
-      if (response.ok) {
-        setSubmitMessage('Message sent successfully! I&apos;ll get back to you soon.');
-        setFormData({ name: '', email: '', subject: '', message: '' });
-      } else {
-        // Fallback to mailto
-        triggerMailto();
-      }
-    } catch {
-      // Fallback to mailto on any error
-      triggerMailto();
-    }
-
-    setIsSubmitting(false);
-
+    // Build mailto link with form data
+    const subject = encodeURIComponent(formData.subject);
+    const body = encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+    );
+    const mailtoLink = `mailto:arshad4self@gmail.com?subject=${subject}&body=${body}`;
+    
+    // Open email client
+    window.location.href = mailtoLink;
+    
+    // Show confirmation message
+    setSubmitMessage('Opening your email client...');
+    setFormData({ name: '', email: '', subject: '', message: '' });
+    
     // Clear message after 5 seconds
     setTimeout(() => setSubmitMessage(''), 5000);
-  };
-
-  const triggerMailto = () => {
-    const mailtoLink = `mailto:arshad4self@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`)}`;
-    window.location.href = mailtoLink;
-    setSubmitMessage('Opening email client...');
   };
 
   const contactInfo = [
@@ -133,23 +117,28 @@ export default function Contact() {
           <div className="space-y-8">
             <h3 className="text-2xl font-bold mb-6">Get in Touch</h3>
 
-            {contactInfo.map((info) => (
-              <a
-                key={info.label}
-                href={info.href}
-                className="group glass rounded-lg p-6 hover:bg-white/10 transition-all hover:scale-105 block"
-              >
-                <div className="flex items-center gap-4">
-                  <span className="text-4xl">{info.icon}</span>
-                  <div>
-                    <p className="text-sm text-foreground/60 mb-1">{info.label}</p>
-                    <p className="font-semibold text-cyan-400 group-hover:text-blue-400 transition-colors">
-                      {info.value}
-                    </p>
+            {contactInfo.map((info) => {
+              const isExternal = info.href.startsWith('http');
+              return (
+                <a
+                  key={info.label}
+                  href={info.href}
+                  target={isExternal ? '_blank' : undefined}
+                  rel={isExternal ? 'noopener noreferrer' : undefined}
+                  className="group glass rounded-lg p-6 hover:bg-white/10 transition-all hover:scale-105 block cursor-pointer"
+                >
+                  <div className="flex items-center gap-4">
+                    <span className="text-4xl">{info.icon}</span>
+                    <div>
+                      <p className="text-sm text-foreground/60 mb-1">{info.label}</p>
+                      <p className="font-semibold text-cyan-400 group-hover:text-blue-400 transition-colors">
+                        {info.value}
+                      </p>
+                    </div>
                   </div>
-                </div>
-              </a>
-            ))}
+                </a>
+              );
+            })}
 
             {/* Social links */}
             <div className="mt-12 pt-8 border-t border-white/10">
@@ -255,14 +244,14 @@ export default function Contact() {
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
-              href="mailto:arshad4self@gmail.com"
-              className="inline-block px-8 py-3 rounded-lg bg-gradient-to-r from-cyan-400 to-blue-500 text-background font-semibold transition-all hover:shadow-lg hover:shadow-cyan-400/30 hover:scale-105 active:scale-95"
+              href="mailto:arshad4self@gmail.com?subject=Let%27s%20Collaborate&body=Hi%20Arshad,%0A%0AI%20would%20like%20to%20discuss%20a%20project%20with%20you."
+              className="inline-block px-8 py-3 rounded-lg bg-gradient-to-r from-cyan-400 to-blue-500 text-background font-semibold transition-all hover:shadow-lg hover:shadow-cyan-400/30 hover:scale-105 active:scale-95 cursor-pointer"
             >
               Send Email
             </a>
             <a
               href="tel:+918112775690"
-              className="inline-block px-8 py-3 rounded-lg glass font-semibold transition-all hover:bg-white/10 hover:scale-105 active:scale-95"
+              className="inline-block px-8 py-3 rounded-lg glass font-semibold transition-all hover:bg-white/10 hover:scale-105 active:scale-95 cursor-pointer"
             >
               Call Me
             </a>

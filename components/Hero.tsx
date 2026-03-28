@@ -83,11 +83,11 @@ export default function Hero() {
             href="#contact"
             className="px-8 py-3 rounded-lg glass font-semibold text-foreground transition-all hover:bg-white/10 hover:scale-105 active:scale-95 cursor-pointer"
           >
-            Let's Build Together
+            Let&apos;s Build Together
           </a>
 
           <a
-            href="mailto:arshad4self@gmail.com?subject=Let%27s%20Collaborate"
+            href="mailto:arshad4self@gmail.com?subject=Let%27s%20Collaborate&body=Hi%20Arshad,%0A%0AI%20would%20like%20to%20discuss%20a%20project%20with%20you."
             className="px-8 py-3 rounded-lg border border-cyan-400/40 text-cyan-400 font-semibold transition-all hover:bg-cyan-400/10 hover:scale-105 active:scale-95 cursor-pointer"
           >
             Start Conversation
