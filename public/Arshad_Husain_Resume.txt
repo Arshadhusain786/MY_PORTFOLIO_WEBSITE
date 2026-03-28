@@ -1,0 +1,64 @@
+ARSHAD HUSAIN
+Backend-focused Full Stack Developer
+Email: arshad4self@gmail.com | Phone: +91 8112775690 | Location: India / Remote
+LinkedIn: linkedin.com/in/arshad-husain | GitHub: github.com/arshad4self
+
+---PROFESSIONAL SUMMARY---
+
+Backend-focused Full Stack Developer with experience building scalable applications using Java, Spring Boot, React, and REST APIs. Developed secure microservices with OAuth2 and JWT, and improved API performance by up to 30% through query optimization and caching. Currently interning at Texium Solutions where I've architected robust backend systems and contributed to production-grade applications.
+
+---CORE SKILLS---
+
+Languages: Java, C++, SQL
+Backend Frameworks: Spring Boot, Spring MVC, Hibernate, JPA
+APIs & Architecture: REST APIs, Microservices, Layered Architecture, MVC
+Security: Spring Security, OAuth2, JWT, Role-Based Access Control (RBAC)
+Databases & Caching: MySQL, PostgreSQL, Redis
+DevOps & Tools: Docker, CI/CD Pipelines, Jenkins, Git, Maven, Swagger, Postman
+Concepts: Data Structures, OOPs, API Design, Performance Tuning, Scalable Systems
+
+---PROFESSIONAL EXPERIENCE---
+
+Java Backend Developer Intern — Texium Solutions
+Oct 2025 – Dec 2025
+• Developed Spring Boot REST APIs for core backend workflows and secured 15+ endpoints using OAuth2 and JWT, eliminating unauthorized access during testing.
+• Accelerated API throughput by refining Hibernate/JPA queries and applying Redis caching, achieving 30% faster responses and 25% lower database load.
+
+Java Backend / Full Stack Trainee — AccioJob
+May 2025 – Present
+• Completed industry-aligned training in Core Java, Data Structures, and Spring Boot, strengthening backend design capability and boosting solution efficiency by 20%.
+• Built backend-focused applications using Spring Boot, REST APIs, and MySQL, applying clean architecture to reduce defect rates by 15%.
+
+---FEATURED PROJECTS---
+
+Career Galaxy – Full Stack Platform (Live)
+• Collaborated in a cross-functional team to architect, develop, and deploy a production-grade full-stack platform on AWS with a custom domain for career guidance and referral workflows.
+• Engineered scalable backend services using Spring Boot, REST APIs, JPA, and PostgreSQL, following clean layered architecture for maintainability and performance.
+• Developed a responsive React-based frontend, optimizing user experience for profile management, referral system, and dashboard interactions.
+• Integrated secure authentication and Razorpay payment gateway, enabling reliable user access and monetization features.
+
+E-Commerce Backend Application (Microservices)
+• Built a Spring Boot–based microservices backend (User, Product, Payment) integrated with Eureka and API Gateway, improving modularity and service isolation.
+• Developed 15+ REST APIs using layered architecture with JWT-based authentication and role-based access control (RBAC).
+• Implemented dynamic product filtering and sorting using JPA and optimized queries, reducing average response time by 20–30%.
+• Integrated payment workflow with external APIs and applied centralized exception handling to ensure secure and reliable end-to-end operations.
+
+---EDUCATION---
+
+B.Tech in Information Technology
+Rajkiya Engineering College, Ambedkar Nagar
+Expected Graduation: May 2026 | CGPA: 75%
+
+Relevant Coursework: Data Structures and Algorithms, Object-Oriented Programming, DBMS, Operating Systems, Computer Networks, Software Engineering
+
+---ACHIEVEMENTS & RECOGNITION---
+
+• Solved 500+ DSA problems on LeetCode and GeeksforGeeks, maintaining 50-day and 100-day coding streaks, demonstrating strong analytical consistency.
+• Won Blind Coding Contest, ranking 1st among 40+ participants, showcasing exceptional problem-solving abilities under pressure.
+• Mentored 10+ students at the Software Development Club in Java and backend fundamentals.
+• Volunteered with Koshish Organization, teaching 100+ underprivileged students and increasing academic pass rates by 45%.
+
+---CERTIFICATIONS---
+
+• Core Java & Spring Boot Certification – AccioJob
+• Data Structures & Algorithms Specialization – LeetCode & GeeksforGeeks

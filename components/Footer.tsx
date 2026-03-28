@@ -14,10 +14,9 @@ export default function Footer() {
   ];
 
   const socialLinks = [
-    { label: 'GitHub', icon: '🐙', href: '#' },
-    { label: 'LinkedIn', icon: '💼', href: '#' },
-    { label: 'Twitter', icon: '𝕏', href: '#' },
-    { label: 'Dev.to', icon: '👨‍💻', href: '#' },
+    { label: 'GitHub', icon: '🐙', href: 'https://github.com/arshad4self' },
+    { label: 'LinkedIn', icon: '💼', href: 'https://linkedin.com/in/arshad-husain' },
+    { label: 'Email', icon: '📧', href: 'mailto:arshad4self@gmail.com' },
   ];
 
   return (
@@ -59,6 +58,8 @@ export default function Footer() {
                 <a
                   key={social.label}
                   href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   title={social.label}
                   className="w-10 h-10 rounded-lg glass flex items-center justify-center text-lg hover:bg-cyan-400/20 hover:border-cyan-400/50 transition-all hover:scale-110"
                 >
@@ -73,13 +74,13 @@ export default function Footer() {
             <h4 className="font-semibold mb-4">Contact</h4>
             <ul className="space-y-2 text-sm text-foreground/60">
               <li>
-                <a href="mailto:arshad@example.com" className="hover:text-cyan-400 transition-colors">
-                  arshad@example.com
+                <a href="mailto:arshad4self@gmail.com" className="hover:text-cyan-400 transition-colors">
+                  arshad4self@gmail.com
                 </a>
               </li>
               <li>
-                <a href="tel:+1234567890" className="hover:text-cyan-400 transition-colors">
-                  +1 (234) 567-8900
+                <a href="tel:+918112775690" className="hover:text-cyan-400 transition-colors">
+                  +91 8112775690
                 </a>
               </li>
             </ul>

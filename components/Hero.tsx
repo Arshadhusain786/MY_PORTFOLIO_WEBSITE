@@ -70,7 +70,7 @@ export default function Hero() {
         </p>
 
         {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16 animate-fade-in animation-delay-500">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16 animate-fade-in animation-delay-500 flex-wrap">
           <a
             href="#projects"
             className="group relative px-8 py-3 rounded-lg bg-gradient-to-r from-cyan-400 to-blue-500 text-background font-semibold overflow-hidden transition-all hover:shadow-lg hover:shadow-cyan-400/40 hover:scale-105 active:scale-95"
@@ -83,7 +83,15 @@ export default function Hero() {
             href="#contact"
             className="px-8 py-3 rounded-lg glass font-semibold text-foreground transition-all hover:bg-white/10 hover:scale-105 active:scale-95"
           >
-            Get in Touch
+            Hire Me
+          </a>
+
+          <a
+            href="/Arshad_Husain_Resume.txt"
+            download="Arshad_Husain_Resume.txt"
+            className="px-8 py-3 rounded-lg border border-cyan-400/40 text-cyan-400 font-semibold transition-all hover:bg-cyan-400/10 hover:scale-105 active:scale-95"
+          >
+            Download Resume
           </a>
         </div>
 

@@ -34,29 +34,29 @@ export default function About() {
           {/* Text content */}
           <div className="space-y-6">
             <p className="text-lg text-foreground/80 leading-relaxed">
-              I&apos;m a passionate Full Stack Developer with a deep focus on backend engineering and system design. My journey in tech has been driven by a desire to build scalable, efficient solutions that solve real-world problems.
+              I&apos;m a backend-focused Full Stack Developer specializing in building scalable applications using Java, Spring Boot, and modern web technologies. My passion lies in engineering robust systems that solve real-world problems efficiently and at scale.
             </p>
 
             <p className="text-lg text-foreground/80 leading-relaxed">
-              With expertise in modern frameworks and architectures, I specialize in creating robust backend systems, implementing complex business logic, and optimizing performance at scale. I believe in writing clean, maintainable code and following best practices.
+              Currently interning at Texium Solutions where I&apos;ve developed secure microservices, optimized API performance by 30%, and implemented OAuth2/JWT authentication across 15+ endpoints. I specialize in designing scalable REST APIs, microservices architectures, and implementing advanced caching strategies with Redis.
             </p>
 
             <p className="text-lg text-foreground/80 leading-relaxed">
-              Beyond coding, I&apos;m fascinated by system design, distributed systems, and the intersection of engineering and product thinking. I love mentoring junior developers and sharing knowledge with the community.
+              Beyond backend engineering, I&apos;m deeply passionate about Data Structures and Algorithms, having solved 500+ DSA problems and ranked first in competitive blind coding contests. I love mentoring students, contributing to the developer community, and building production-grade systems that make an impact.
             </p>
 
             <div className="flex gap-6 pt-4">
               <div>
-                <p className="text-3xl font-bold text-cyan-400">15+</p>
-                <p className="text-foreground/60 text-sm">Projects Completed</p>
+                <p className="text-3xl font-bold text-cyan-400">500+</p>
+                <p className="text-foreground/60 text-sm">DSA Problems Solved</p>
               </div>
               <div>
-                <p className="text-3xl font-bold text-cyan-400">3+</p>
-                <p className="text-foreground/60 text-sm">Years Experience</p>
+                <p className="text-3xl font-bold text-cyan-400">30%</p>
+                <p className="text-foreground/60 text-sm">API Performance Gain</p>
               </div>
               <div>
-                <p className="text-3xl font-bold text-cyan-400">100%</p>
-                <p className="text-foreground/60 text-sm">Client Satisfaction</p>
+                <p className="text-3xl font-bold text-cyan-400">10+</p>
+                <p className="text-foreground/60 text-sm">Students Mentored</p>
               </div>
             </div>
           </div>
@@ -71,7 +71,7 @@ export default function About() {
                   <div>
                     <p className="text-sm font-medium mb-2">Backend Frameworks</p>
                     <div className="flex flex-wrap gap-2">
-                      {['Spring Boot', 'Node.js', 'Express'].map((tech) => (
+                      {['Spring Boot', 'Spring MVC', 'Hibernate/JPA'].map((tech) => (
                         <span
                           key={tech}
                           className="px-3 py-1 rounded-full bg-cyan-400/10 border border-cyan-400/30 text-cyan-400 text-xs"
@@ -85,7 +85,7 @@ export default function About() {
                   <div>
                     <p className="text-sm font-medium mb-2">Languages</p>
                     <div className="flex flex-wrap gap-2">
-                      {['Java', 'JavaScript', 'TypeScript'].map((tech) => (
+                      {['Java', 'C++', 'SQL'].map((tech) => (
                         <span
                           key={tech}
                           className="px-3 py-1 rounded-full bg-blue-400/10 border border-blue-400/30 text-blue-400 text-xs"
@@ -97,9 +97,9 @@ export default function About() {
                   </div>
 
                   <div>
-                    <p className="text-sm font-medium mb-2">Tools & Platforms</p>
+                    <p className="text-sm font-medium mb-2">Databases & Caching</p>
                     <div className="flex flex-wrap gap-2">
-                      {['PostgreSQL', 'Docker', 'AWS'].map((tech) => (
+                      {['PostgreSQL', 'MySQL', 'Redis'].map((tech) => (
                         <span
                           key={tech}
                           className="px-3 py-1 rounded-full bg-green-400/10 border border-green-400/30 text-green-400 text-xs"

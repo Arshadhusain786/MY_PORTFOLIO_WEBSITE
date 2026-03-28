@@ -43,26 +43,26 @@ export default function Contact() {
     {
       icon: '📧',
       label: 'Email',
-      value: 'arshad@example.com',
-      href: 'mailto:arshad@example.com',
+      value: 'arshad4self@gmail.com',
+      href: 'mailto:arshad4self@gmail.com',
     },
     {
       icon: '💼',
       label: 'LinkedIn',
-      value: 'linkedin.com/in/arshad',
-      href: '#',
+      value: 'linkedin.com/in/arshad-husain',
+      href: 'https://linkedin.com/in/arshad-husain',
     },
     {
       icon: '🐙',
       label: 'GitHub',
-      value: 'github.com/arshad',
-      href: '#',
+      value: 'github.com/arshad4self',
+      href: 'https://github.com/arshad4self',
     },
     {
-      icon: '🔗',
-      label: 'Portfolio',
-      value: 'arshadhusain.com',
-      href: '#',
+      icon: '📱',
+      label: 'Phone',
+      value: '+91 8112775690',
+      href: 'tel:+918112775690',
     },
   ];
 
@@ -119,14 +119,15 @@ export default function Contact() {
               <h4 className="font-semibold mb-6">Follow My Work</h4>
               <div className="flex gap-4">
                 {[
-                  { label: 'GitHub', icon: '🐙' },
-                  { label: 'LinkedIn', icon: '💼' },
-                  { label: 'Twitter', icon: '𝕏' },
-                  { label: 'Dev.to', icon: '👨‍💻' },
+                  { label: 'GitHub', icon: '🐙', href: 'https://github.com/arshad4self' },
+                  { label: 'LinkedIn', icon: '💼', href: 'https://linkedin.com/in/arshad-husain' },
+                  { label: 'Email', icon: '📧', href: 'mailto:arshad4self@gmail.com' },
                 ].map((social) => (
                   <a
                     key={social.label}
-                    href="#"
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="w-12 h-12 rounded-lg glass flex items-center justify-center text-xl hover:bg-cyan-400/20 hover:border-cyan-400/50 transition-all hover:scale-110"
                     title={social.label}
                   >
@@ -211,16 +212,24 @@ export default function Contact() {
 
         {/* CTA Section */}
         <div className="mt-20 glass rounded-2xl p-8 md:p-12 text-center glow-cyan">
-          <h3 className="text-3xl md:text-4xl font-bold mb-4">Ready to work together?</h3>
+          <h3 className="text-3xl md:text-4xl font-bold mb-4">Let&apos;s Build Something Amazing</h3>
           <p className="text-foreground/70 mb-8 max-w-2xl mx-auto">
-            Whether you have a specific project or just want to discuss possibilities, I&apos;m here to help turn your ideas into reality.
+            Whether you have a specific project, need a backend engineer, or just want to discuss tech and opportunities, I&apos;m always happy to connect. Let&apos;s create impactful solutions together!
           </p>
-          <a
-            href="mailto:arshad@example.com"
-            className="inline-block px-8 py-3 rounded-lg bg-gradient-to-r from-cyan-400 to-blue-500 text-background font-semibold transition-all hover:shadow-lg hover:shadow-cyan-400/30 hover:scale-105 active:scale-95"
-          >
-            Start a Conversation
-          </a>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a
+              href="mailto:arshad4self@gmail.com"
+              className="inline-block px-8 py-3 rounded-lg bg-gradient-to-r from-cyan-400 to-blue-500 text-background font-semibold transition-all hover:shadow-lg hover:shadow-cyan-400/30 hover:scale-105 active:scale-95"
+            >
+              Send Email
+            </a>
+            <a
+              href="tel:+918112775690"
+              className="inline-block px-8 py-3 rounded-lg glass font-semibold transition-all hover:bg-white/10 hover:scale-105 active:scale-95"
+            >
+              Call Me
+            </a>
+          </div>
         </div>
       </div>
     </section>

@@ -16,57 +16,57 @@ export default function Skills() {
 
   const skills: Skill[] = [
     {
-      category: 'Backend Frameworks',
+      category: 'Languages',
       color: 'from-cyan-400 to-blue-500',
       items: [
-        { name: 'Spring Boot', proficiency: 95 },
-        { name: 'Node.js / Express', proficiency: 90 },
-        { name: 'FastAPI', proficiency: 85 },
+        { name: 'Java', proficiency: 95 },
+        { name: 'C++', proficiency: 85 },
+        { name: 'SQL', proficiency: 90 },
       ],
     },
     {
-      category: 'Languages',
+      category: 'Backend Frameworks',
       color: 'from-blue-400 to-purple-500',
       items: [
-        { name: 'Java', proficiency: 95 },
-        { name: 'JavaScript / TypeScript', proficiency: 90 },
-        { name: 'Python', proficiency: 85 },
+        { name: 'Spring Boot', proficiency: 95 },
+        { name: 'Spring MVC', proficiency: 90 },
+        { name: 'Hibernate / JPA', proficiency: 92 },
       ],
     },
     {
-      category: 'Databases & Tools',
+      category: 'APIs & Architecture',
       color: 'from-green-400 to-cyan-500',
       items: [
-        { name: 'PostgreSQL / MySQL', proficiency: 92 },
-        { name: 'MongoDB', proficiency: 85 },
-        { name: 'Redis / Caching', proficiency: 88 },
+        { name: 'REST APIs', proficiency: 95 },
+        { name: 'Microservices', proficiency: 90 },
+        { name: 'Layered Architecture', proficiency: 92 },
       ],
     },
     {
-      category: 'DevOps & Cloud',
+      category: 'Security & Authentication',
       color: 'from-orange-400 to-red-500',
       items: [
-        { name: 'Docker / Kubernetes', proficiency: 85 },
-        { name: 'AWS', proficiency: 82 },
-        { name: 'CI/CD Pipelines', proficiency: 88 },
+        { name: 'Spring Security', proficiency: 90 },
+        { name: 'OAuth2 & JWT', proficiency: 90 },
+        { name: 'Role-Based Access Control', proficiency: 90 },
       ],
     },
     {
-      category: 'Frontend Mastery',
+      category: 'Databases & Caching',
       color: 'from-pink-400 to-rose-500',
       items: [
-        { name: 'React / Next.js', proficiency: 88 },
-        { name: 'Tailwind CSS', proficiency: 90 },
-        { name: 'Vue.js', proficiency: 80 },
+        { name: 'MySQL / PostgreSQL', proficiency: 92 },
+        { name: 'Redis Caching', proficiency: 88 },
+        { name: 'Database Optimization', proficiency: 90 },
       ],
     },
     {
-      category: 'System Design',
+      category: 'DevOps & Tools',
       color: 'from-indigo-400 to-blue-500',
       items: [
-        { name: 'Microservices', proficiency: 88 },
-        { name: 'Scalability & Performance', proficiency: 87 },
-        { name: 'Design Patterns', proficiency: 90 },
+        { name: 'Docker & CI/CD', proficiency: 85 },
+        { name: 'Git & Maven', proficiency: 90 },
+        { name: 'Jenkins & Swagger', proficiency: 85 },
       ],
     },
   ];
@@ -152,7 +152,7 @@ export default function Skills() {
         {/* Additional skills note */}
         <div className="mt-16 glass rounded-xl p-8 text-center">
           <p className="text-foreground/70">
-            Constantly learning and adapting to new technologies. Ask me about my latest projects and the tech stack I&apos;m exploring!
+            Specialized in building scalable backend systems with a focus on performance optimization, security, and clean architecture. Proven track record of improving API response times by up to 30% through query optimization and caching strategies.
           </p>
         </div>
       </div>
